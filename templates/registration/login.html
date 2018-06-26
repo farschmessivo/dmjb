@@ -1,0 +1,41 @@
+{% extends "dmjb/base.html" %}
+
+
+{% block body_block %}
+
+    <!--<link href="https://getbootstrap.com/docs/4.1/examples/sign-in/signin.css"-->
+    <!--rel="stylesheet">-->
+
+    <!--<div class="jumbotron">-->
+    <div class="row">
+        <div class="col-12">
+      <h1 class="text-center mt-4">Login</h1>
+    </div>
+    </div>
+    <div class="row vertical-center-row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card mt-4 mb-5 ">
+            <div class="card-body" >
+            <form class="form-signin" role="form" method="post" action=".">
+                {% csrf_token %}
+            <label>Login:</label>
+            <input type="text" name="username" id="id_username" class="form-control"
+placeholder="Username" required autofocus>
+
+            <div class="form-group mt-3">
+            <label>Password:</label>
+            <input type="password" name="password" id="id_password" class="form-control"
+placeholder="Password" required>
+            </div>
+            </div>
+            <button type="submit" class="ml-3 col-lg-6 btn btn-primary">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

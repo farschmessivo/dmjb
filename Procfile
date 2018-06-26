@@ -1,0 +1,1 @@
+web: gunicorn django_meetup_job_board_project.wsgi --log-file -

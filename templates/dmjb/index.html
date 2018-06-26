@@ -1,0 +1,52 @@
+{% extends 'dmjb/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+    {{ category.name }}
+{% endblock %}
+
+{% block body_block %}
+<div class="row">
+     <div class="col-12">
+      <h1 class="text-center mt-4">Django Meetup Job Board</h1>
+    </div>
+</div>
+<div class="card mt-4 mb-5 pl-2">
+  <div class="card-body" >
+        <div id="jobs"  >
+            {% if jobs %}
+                <ul class="list-unstyled">
+                {% for job in jobs %}
+                    <li>
+                  <!--  <a href="/dmjb/job/{{ job.slug }}">{{ job.title }}</a> -->
+                    <a href="{% url 'show_job' job.slug %}">{{ job.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+
+                <strong>There are no jobs to present.</strong>
+
+            {% endif %}
+        </div>
+       </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+<!--{% load staticfiles %} &lt;!&ndash; New line &ndash;&gt;-->
+<!--<html> <head>-->
+<!--<title>Rango</title> </head>-->
+<!--<body>-->
+<!--<h1>Django Meetup Job Board</h1>-->
+<!--<div>-->
+<!--hey there partner! <br />-->
+    <!--<strong>{{ boldmessage }}</strong><br /> </div>-->
+<!--<div>-->
+<!--<a href="/images/about/">About</a><br /> <img src="{% static "images/waikato.jpg" %}"-->
+<!--alt="Picture of Rango" /> &lt;!&ndash; New line &ndash;&gt;-->
+    <!--</div> </body>-->
+<!--</html>-->

@@ -1,0 +1,46 @@
+{% extends 'dmjb/base.html' %}
+{% load widget_tweaks %}
+
+{% load staticfiles %}
+{% block title_block %}
+    {{ category.name }}
+{% endblock %}
+
+ {% block body_block %}
+<div class="row">
+        <div class="col-12">
+          <h1 class="text-center mt-4">Add a Job</h1>
+        </div>
+    </div>
+<div class="row justify-content-center">
+    <div class="card mt-4 mb-5 pl-2 col-8">
+    <div class="card-body">
+        <form id="job_form" method="post" action="{% url 'add_job' %}">
+             <div class="form-group">
+
+            {% csrf_token %}
+            {% for field in form.visible_fields %}
+
+            <div class="form-group">
+              <label>{{ field.label }}</label>
+                {{ field|add_class:"form-control" }}
+                {% for error in field.errors %}
+              <div class="invalid-feedback">
+                {{ error }}
+              </div>
+
+            {% endfor %}
+                </div>
+               {% endfor %}
+              <div class="mt-3">
+                  <button class="btn btn-primary" name="submit" value="Submit" />Add a Job
+                  </button>
+                        </div>
+                   </form>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+

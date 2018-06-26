@@ -1,0 +1,8 @@
+Django==2.0.5
+django-registration-redux==2.4
+django-widget-tweaks==1.4.2
+Pillow==5.1.0
+psycopg2==2.7.4
+pytz==2018.4
+gunicorn==19.8.1
+whitenoise==3.3.1

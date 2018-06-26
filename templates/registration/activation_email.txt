@@ -1,0 +1,12 @@
+Hi,
+
+It looks like you have asked to register an account at {{ site.name }}:
+
+If this wasn't you, please ignore this email and your address will be removed from our records.
+
+To activate this account, please click the following link within the next 7 days:
+
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}
+
+Thanks,
+DMJB team
